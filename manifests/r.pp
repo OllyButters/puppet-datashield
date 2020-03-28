@@ -36,6 +36,7 @@ class datashield::r ($opal_password = 'password', $server_side = true,
                      $dsmodelling_githubusername = 'datashield', $dsmodelling_ref = 'master') {
   include datashield::packages::libcurl
   include datashield::packages::libxml
+  include datashield::packages::libgsl
   include datashield::packages::openssl
   include ::r
 
@@ -58,6 +59,16 @@ class datashield::r ($opal_password = 'password', $server_side = true,
   ::r::package { 'RANN':
     dependencies => true,
   }
+  ::r::package { 'metafor':
+    dependencies => true,
+  }
+  ::r::package { 'fields':
+    dependencies => true,
+  }
+  ::r::package { 'covr':
+    dependencies => true,
+  }
+
 
   if ($server_side){
     if ($dsbase_ref != ''){
