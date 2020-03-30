@@ -26,7 +26,7 @@ class datashield::packages::libgsl {
 
   package { $libgsl:
     ensure => 'present',
-    alias  => 'libcurl',
+    alias  => 'libgsl',
   }
 
 }
